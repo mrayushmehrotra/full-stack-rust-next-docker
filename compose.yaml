@@ -1,4 +1,14 @@
 services:
+  rustapp:
+    container_name: rustapp
+    image: ayushmehrotra/rustapp:latest
+    build:
+      context: ./backend
+      dockerfile: rust.dockerfile
+      args:
+        DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+    ports:
+      - 8080
   db:
     container_name: db
     image: postgres:13
