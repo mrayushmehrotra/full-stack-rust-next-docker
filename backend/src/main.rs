@@ -3,7 +3,7 @@ use postgres::Error as PostgresError;
 use std::net::{ TcpListener, TcpStream };
 use std::io::{ Read, Write };
 use std::env;
-
+use std::env::var("http://localhost:5432");
 #[macro_use]
 extern crate serde_derive;
 
